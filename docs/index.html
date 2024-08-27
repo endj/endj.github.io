@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <link rel="preconnect" href="https://api.github.com">
     <meta charset="UTF-8">
@@ -8,210 +8,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        :root {
-            --dark: rgb(29, 29, 29);
-            --dark-hover: #292929;
-            --light: #dbdbdb;
-            --light-hover: #efefef;
-        }
+:root {
+  --dark: rgb(29, 29, 29);
+  --dark-hover: #292929; 
+  --light: #dbdbdb;
+  --light-hover: #efefef;
+}
 
-        .row {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #cdcdcd;
-            padding-bottom: 5px;
-        }
+.row {
+  display: flex;
+  justify-content: space-between;
+}
 
-        @media (prefers-color-scheme: dark) {
-            * {
-                background: var(--dark);
-                color: var(--light);
-            }
+.row > div:nth-of-type(2) {
+    text-align: right;
+}
 
-            li:hover {
-                background: var(--dark-hover);
-            }
+@media (prefers-color-scheme: dark) {
+  * {
+    background: var(--dark);
+    color: var(--light);
+  }
 
-            li:hover>* {
-                background: inherit;
-            }
-        }
+  li:hover {
+    background: var(--dark-hover);
+  }
 
-        /*for light theme*/
-        @media (prefers-color-scheme: light) {
-            * {
-                background: var(--light);
-                color: var(--dark);
-            }
+  li:hover>* {
+    background: inherit;
+  }
+}
 
-            li:hover {
-                background: var(--light-hover);
-            }
+/*for light theme*/
+@media (prefers-color-scheme: light) {
+  * {
+    background: var(--light);
+    color: var(--dark);
+  }
 
-            li:hover>* {
-                background: inherit;
-            }
-        }
+  li:hover {
+    background: var(--light-hover);
+  }
 
-        body {
-            margin: 5%;
-        }
+  li:hover>* {
+    background: inherit;
+  }
+}
 
-        li {
-            display: block;
-            padding: 5px;
-        }
+body {
+  margin: 5%;
+}
+
+li {
+  display: block;
+  padding: 5px;
+}
 
 
-        h1 {
-            margin: 0;
-        }
+h1 {
+  margin: 0;
+}
 
-        h1:last-of-type {
-            margin-bottom: 40px;
-        }
+h1:last-of-type {
+  margin-bottom: 40px;
+}
 
-        * {
-            padding: 0;
-            border: none;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
+* {
+  padding: 0;
+  border: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+}
+
     </style>
 </head>
-
 <body>
-
-    <h1>This is my website.</h1>
-    <h1>Here are some repositories.</h1>
+    
+    <h1>This is my website.</h1><h1>Here are some repositories.</h1>
     <ul>
-
-        <li>
-            <a href=https://github.com/endj/WriteCoalescing target="_blank" rel="noopener">
-                <div class="row">
-                    <div>
-                        <b>WriteCoalescing</b>
-                        <span> - Testing out strategies for write coalescing of SQL inserts</span>
-                    </div>
-                    <div>
-                        <span>Java</span>
-                    </div>
-                </div>
-            </a>
-        </li>
-
-        <li>
-            <a href=https://github.com/endj/JS-RNG target="_blank" rel="noopener">
-                <div class="row">
-                    <div>
-                        <b>JS-RNG</b>
-                        <span> - Testing sources of randomness</span>
-                    </div>
-                    <div>
-                        <span>HTML</span>
-                    </div>
-                </div>
-            </a>
-        </li>
-
-        <li>
-            <a href=https://github.com/endj/endj.github.io target="_blank" rel="noopener">
-                <div class="row">
-                    <div>
-                        <b>endj.github.io</b>
-                        <span> - Source code for https://endj.github.io/</span>
-                    </div>
-                    <div>
-                        <span>CSS, HTML</span>
-                    </div>
-                </div>
-            </a>
-        </li>
-
-        <li>
-            <a href=https://github.com/endj/mkd-to-html target="_blank" rel="noopener">
-                <div class="row">
-                    <div>
-                        <b>mkd-to-html</b>
-                        <span> - Simple static site</span>
-                    </div>
-                    <div>
-                        <span>JavaScript, HTML</span>
-                    </div>
-                </div>
-            </a>
-        </li>
-
-        <li>
-            <a href=https://github.com/endj/Very-Random-Totally-Fair-And-Open-Source-Random-Picker target="_blank"
-                rel="noopener">
-                <div class="row">
-                    <div>
-                        <b>Very-Random-Totally-Fair-And-Open-Source-Random-Picker</b>
-                        <span> - Very useful at work</span>
-                    </div>
-                    <div>
-                        <span>TypeScript</span>
-                    </div>
-                </div>
-            </a>
-        </li>
-
-        <li>
-            <a href=https://github.com/endj/Distributed-Scheduling-Example target="_blank" rel="noopener">
-                <div class="row">
-                    <div>
-                        <b>Distributed-Scheduling-Example</b>
-                        <span> - Repo that implements a simple lock strategy to control concurrency</span>
-                    </div>
-                    <div>
-                        <span>Java, JavaScript, HTML, Dockerfile, Shell</span>
-                    </div>
-                </div>
-            </a>
-        </li>
-
-        <li>
-            <a href=https://github.com/endj/endj target="_blank" rel="noopener">
-                <div class="row">
-                    <div>
-                        <b>endj</b>
-                        <span> - Converts an image to a markdown table using matching color icons</span>
-                    </div>
-                    <div>
-                        <span>Python</span>
-                    </div>
-                </div>
-            </a>
-        </li>
-
-        <li>
-            <a href=https://github.com/endj/analysis-pipeline target="_blank" rel="noopener">
-                <div class="row">
-                    <div>
-                        <b>analysis-pipeline</b>
-                        <span> - Just exploring some event aggregation pattenrs</span>
-                    </div>
-                    <div>
-                        <span>Java, Rust, Python</span>
-                    </div>
-                </div>
-            </a>
-        </li>
-
-        <li>
-            <a href=https://github.com/endj/vigen-re target="_blank" rel="noopener">
-                <div class="row">
-                    <div>
-                        <b>vigen-re</b>
-                        <span> - Visualization of encrypting text using Vigènere ciphers</span>
-                    </div>
-                    <div>
-                        <span>JavaScript, HTML</span>
-                    </div>
-                </div>
-            </a>
-        </li>
-
+    
         <li>
             <a href=https://github.com/endj/game-of-life target="_blank" rel="noopener">
                 <div class="row">
@@ -225,7 +100,147 @@
                 </div>
             </a>
         </li>
-
+        
+        <li>
+            <a href=https://github.com/endj/returns target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>returns</b>
+                        <span> - </span>
+                    </div>
+                    <div>
+                        <span>TypeScript, HTML, JavaScript</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href=https://github.com/endj/endj.github.io target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>endj.github.io</b>
+                        <span> - Source code for https://endj.github.io/</span>
+                    </div>
+                    <div>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href=https://github.com/endj/mkd-to-html target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>mkd-to-html</b>
+                        <span> - Simple static site</span>
+                    </div>
+                    <div>
+                        <span>JavaScript, HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href=https://github.com/endj/WriteCoalescing target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>WriteCoalescing</b>
+                        <span> - Testing out strategies for write coalescing of SQL inserts</span>
+                    </div>
+                    <div>
+                        <span>Java</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href=https://github.com/endj/JS-RNG target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>JS-RNG</b>
+                        <span> - Testing sources of randomness</span>
+                    </div>
+                    <div>
+                        <span>HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href=https://github.com/endj/Very-Random-Totally-Fair-And-Open-Source-Random-Picker target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Very-Random-Totally-Fair-And-Open-Source-Random-Picker</b>
+                        <span> - Very useful at work</span>
+                    </div>
+                    <div>
+                        <span>TypeScript</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href=https://github.com/endj/Distributed-Scheduling-Example target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Distributed-Scheduling-Example</b>
+                        <span> - Repo that implements a simple lock strategy to control concurrency</span>
+                    </div>
+                    <div>
+                        <span>Java, JavaScript, HTML, Dockerfile, Shell</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href=https://github.com/endj/endj target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>endj</b>
+                        <span> - Converts an image to a markdown table  using matching color icons</span>
+                    </div>
+                    <div>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href=https://github.com/endj/analysis-pipeline target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>analysis-pipeline</b>
+                        <span> - Just exploring some event aggregation pattenrs</span>
+                    </div>
+                    <div>
+                        <span>Java, Rust, Python</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href=https://github.com/endj/vigen-re target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>vigen-re</b>
+                        <span> - Visualization of encrypting text using Vigènere ciphers</span>
+                    </div>
+                    <div>
+                        <span>JavaScript, HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
         <li>
             <a href=https://github.com/endj/vertx-websocket-test target="_blank" rel="noopener">
                 <div class="row">
@@ -239,7 +254,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/ABACadabra target="_blank" rel="noopener">
                 <div class="row">
@@ -253,7 +268,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/toy-user-group-system target="_blank" rel="noopener">
                 <div class="row">
@@ -267,7 +282,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/urlShortener target="_blank" rel="noopener">
                 <div class="row">
@@ -281,7 +296,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/mini-framework target="_blank" rel="noopener">
                 <div class="row">
@@ -295,7 +310,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/SmartScraper target="_blank" rel="noopener">
                 <div class="row">
@@ -309,7 +324,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/postgres-tuning-bench target="_blank" rel="noopener">
                 <div class="row">
@@ -323,7 +338,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/GraphQL-Presentation target="_blank" rel="noopener">
                 <div class="row">
@@ -337,7 +352,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/ECS-Architecture-Animation-System target="_blank" rel="noopener">
                 <div class="row">
@@ -351,7 +366,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/config target="_blank" rel="noopener">
                 <div class="row">
@@ -365,7 +380,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/JavaScript-Cross-Worker-Data-Sharing target="_blank" rel="noopener">
                 <div class="row">
@@ -379,7 +394,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/JFokus-2022-Trustly-Competition-Answers target="_blank" rel="noopener">
                 <div class="row">
@@ -393,7 +408,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/JS-3d-polygon-mesh-renderer target="_blank" rel="noopener">
                 <div class="row">
@@ -407,7 +422,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/Book-to-audio target="_blank" rel="noopener">
                 <div class="row">
@@ -421,7 +436,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/Actor-Model-Framework-Java-16 target="_blank" rel="noopener">
                 <div class="row">
@@ -435,15 +450,13 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
-            <a href=https://github.com/endj/Spring-Boot-Web-Boilerplate-Service-Generator target="_blank"
-                rel="noopener">
+            <a href=https://github.com/endj/Spring-Boot-Web-Boilerplate-Service-Generator target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Spring-Boot-Web-Boilerplate-Service-Generator</b>
-                        <span> - Script for generating Spring MVC applications based on some JSON model with
-                            types</span>
+                        <span> - Script for generating Spring MVC applications based on some JSON model with types</span>
                     </div>
                     <div>
                         <span>Java, Shell</span>
@@ -451,7 +464,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/AdventOfCode2020 target="_blank" rel="noopener">
                 <div class="row">
@@ -465,14 +478,13 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/Kafka-Delivery-Guarantees target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Kafka-Delivery-Guarantees</b>
-                        <span> - Short document with examples covering delivery guarantees in distributed systems with
-                            examples in Kafka </span>
+                        <span> - Short document with examples covering delivery guarantees in distributed systems with examples in Kafka </span>
                     </div>
                     <div>
                         <span>TeX</span>
@@ -480,7 +492,7 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/comparing-some-serialization-options target="_blank" rel="noopener">
                 <div class="row">
@@ -494,10 +506,9 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
-            <a href=https://github.com/endj/Graceful-JVM-shutdown-on-Signals-using-shutdownHook target="_blank"
-                rel="noopener">
+            <a href=https://github.com/endj/Graceful-JVM-shutdown-on-Signals-using-shutdownHook target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Graceful-JVM-shutdown-on-Signals-using-shutdownHook</b>
@@ -509,14 +520,13 @@
                 </div>
             </a>
         </li>
-
+        
         <li>
             <a href=https://github.com/endj/Delphi target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Delphi</b>
-                        <span> - Project in cooperation with Tele2. Using mobile and web to create a modern queue
-                            system. </span>
+                        <span> - Project in cooperation with Tele2. Using mobile and web to create a modern queue system. </span>
                     </div>
                     <div>
                         <span>PHP, CSS, JavaScript, HTML, ApacheConf</span>
@@ -524,9 +534,8 @@
                 </div>
             </a>
         </li>
-
+        
     </ul>
-
+    
 </body>
-
 </html>

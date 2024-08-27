@@ -1,9 +1,13 @@
 const fs = require('fs').promises;
+const path = require('path');
 const repoFile = "repos.json"
 
+
+// Fetches and stores all repos in repos.json file
 const fetchRepos = async () => {
-    if (fileExists(repoFile)) {
-        throw `File ${repoFile} already exists`
+    if (await fileExists(repoFile)) {
+        console.log("Repos already fetched, skipping..")
+        return
     }
     const response = await fetch('https://api.github.com/users/endj/repos?per_page=100');
     const json = await response.json();
@@ -12,19 +16,32 @@ const fetchRepos = async () => {
     return data;
 }
 
+// Given a repo, return etails about the repo and writes to languages/repoName
 const fetchLanguage = async (repoName) => {
-    const response = await fetch(`https://api.github.com/repos/endj/${repoName}/languages`)
-    const json = await response.json();
-    await fs.writeFile(`languages/${repoName}`, JSON.stringify(json, null, 2));
-}
+    try {
+        const response = await fetch(`https://api.github.com/repos/endj/${repoName}/languages`);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch languages: ${response.statusText}`);
+        }
+        const json = await response.json();
+        const dir = 'languages';
+        const filePath = path.join(dir, repoName);
+        await fs.mkdir(dir, { recursive: true });
+        await fs.writeFile(filePath, JSON.stringify(json, null, 2));
+        console.log(`File written successfully: ${filePath}`);
+    } catch (error) {
+        console.error(`Error: ${error.message}`);
+        throw new Error(`Failed to fetch language for repo ${repoName}`);
+    }
+};
 
 const fetchLanguages = async () => {
     const languages = await repoData()
     for (const repo of languages) {
         const file = await fileExists(`languages/${repo.name}`)
         if (!file) {
-            console.log(repo.name, " does not exist.. fething ")
-            fetchLanguage(repo.name)
+            console.log(repo.name, " does not exist.. fetching ")
+            await fetchLanguage(repo.name)
         }
     }
     const byName = new Map()
@@ -72,6 +89,10 @@ const siteTemplate = body => {
 .row {
   display: flex;
   justify-content: space-between;
+}
+
+.row > div:nth-of-type(2) {
+    text-align: right;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -127,6 +148,7 @@ h1:last-of-type {
   padding: 0;
   border: none;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
 }
 
     </style>
@@ -156,6 +178,7 @@ const repoData = async () => {
 }
 
 const generateSite = async () => {
+    const repos = await fetchRepos()
     const repoMap = await fetchLanguages()
     const data = await repoData()
 
@@ -167,7 +190,7 @@ const generateSite = async () => {
                 <div class="row">
                     <div>
                         <b>${res.name}</b>
-                        <span> - ${res.description}</span>
+                        <span> - ${res.description ?? ''}</span>
                     </div>
                     <div>
                         <span>${Object.keys(repoMap.get(res.name)).join(", ")}</span>
@@ -185,10 +208,8 @@ const generateSite = async () => {
     </ul>
     `
 }
-
-//fetchLanguages()
-generateSite().then((body) => siteTemplate(body))
-    .then(site => {
-        fs.writeFile("site/index.html", site);
+generateSite().then(site => {
+        const siteData = siteTemplate(site)
+        fs.writeFile("index.html", siteData);
         console.log(site)
     })
