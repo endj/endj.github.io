@@ -1,75 +1,77 @@
-const fs = require('fs').promises;
-const path = require('path');
-const repoFile = "repos.json"
-
+const fs = require("fs").promises;
+const path = require("path");
+const repoFile = "repos.json";
 
 // Fetches and stores all repos in repos.json file
 const fetchRepos = async () => {
-    if (await fileExists(repoFile)) {
-        console.log("Repos already fetched, skipping..")
-        return
-    }
-    const response = await fetch('https://api.github.com/users/endj/repos?per_page=100');
-    const json = await response.json();
-    const data = JSON.stringify(json, null, 2);
-    await fs.writeFile(repoFile, data);
-    return data;
-}
+  if (await fileExists(repoFile)) {
+    console.log("Repos already fetched, skipping..");
+    return;
+  }
+  const response = await fetch(
+    "https://api.github.com/users/endj/repos?per_page=100",
+  );
+  const json = await response.json();
+  const data = JSON.stringify(json, null, 2);
+  await fs.writeFile(repoFile, data);
+  return data;
+};
 
 // Given a repo, return etails about the repo and writes to languages/repoName
 const fetchLanguage = async (repoName) => {
-    try {
-        const response = await fetch(`https://api.github.com/repos/endj/${repoName}/languages`);
-        if (!response.ok) {
-            throw new Error(`Failed to fetch languages: ${response.statusText}`);
-        }
-        const json = await response.json();
-        const dir = 'languages';
-        const filePath = path.join(dir, repoName);
-        await fs.mkdir(dir, { recursive: true });
-        await fs.writeFile(filePath, JSON.stringify(json, null, 2));
-        console.log(`File written successfully: ${filePath}`);
-    } catch (error) {
-        console.error(`Error: ${error.message}`);
-        throw new Error(`Failed to fetch language for repo ${repoName}`);
+  try {
+    const response = await fetch(
+      `https://api.github.com/repos/endj/${repoName}/languages`,
+    );
+    if (!response.ok) {
+      throw new Error(`Failed to fetch languages: ${response.statusText}`);
     }
+    const json = await response.json();
+    const dir = "languages";
+    const filePath = path.join(dir, repoName);
+    await fs.mkdir(dir, { recursive: true });
+    await fs.writeFile(filePath, JSON.stringify(json, null, 2));
+    console.log(`File written successfully: ${filePath}`);
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+    throw new Error(`Failed to fetch language for repo ${repoName}`);
+  }
 };
 
 const fetchLanguages = async () => {
-    const languages = await repoData()
-    for (const repo of languages) {
-        const file = await fileExists(`languages/${repo.name}`)
-        if (!file) {
-            console.log(repo.name, " does not exist.. fetching ")
-            await fetchLanguage(repo.name)
-        }
+  const languages = await repoData();
+  for (const repo of languages) {
+    const file = await fileExists(`languages/${repo.name}`);
+    if (!file) {
+      console.log(repo.name, " does not exist.. fetching ");
+      await fetchLanguage(repo.name);
     }
-    const byName = new Map()
-    for (const repo of languages) {
-        const data = await fs.readFile(`languages/${repo.name}`)
-        const json = JSON.parse(data)
-        byName.set(repo.name, json)
-    }
+  }
+  const byName = new Map();
+  for (const repo of languages) {
+    const data = await fs.readFile(`languages/${repo.name}`);
+    const json = JSON.parse(data);
+    byName.set(repo.name, json);
+  }
 
-    return byName
-}
-
+  return byName;
+};
 
 async function fileExists(filePath) {
-    try {
-        await fs.stat(filePath);
-        return true;
-    } catch (error) {
-        if (error.code === 'ENOENT') {
-            console.log('File does not exist.', filePath);
-            return false;
-        }
-        throw error;
+  try {
+    await fs.stat(filePath);
+    return true;
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      console.log("File does not exist.", filePath);
+      return false;
     }
+    throw error;
+  }
 }
 
-const siteTemplate = body => {
-    const result = `
+const siteTemplate = (body) => {
+  const result = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +83,7 @@ const siteTemplate = body => {
     <style>
 :root {
   --dark: rgb(29, 29, 29);
-  --dark-hover: #292929; 
+  --dark-hover: #292929;
   --light: #dbdbdb;
   --light-hover: #efefef;
 }
@@ -157,40 +159,41 @@ h1:last-of-type {
     ${body}
 </body>
 </html>
-`
-    return result;
+`;
+  return result;
 };
 
 const repoData = async () => {
-    const data = await fs.readFile(repoFile)
-    const json = JSON.parse(data)
-    return json.map(r => {
-        const result = {
-            name: r.name,
-            description: r.description,
-            url: r.html_url,
-            language: r.language,
-            topics: r.topics,
-            updatedAt: r.updated_at
-        };
-        return result;
-    })
-}
+  const data = await fs.readFile(repoFile);
+  const json = JSON.parse(data);
+  return json.map((r) => {
+    const result = {
+      name: r.name,
+      description: r.description,
+      url: r.html_url,
+      language: r.language,
+      topics: r.topics,
+      updatedAt: r.updated_at,
+    };
+    return result;
+  });
+};
 
 const generateSite = async () => {
-    const repos = await fetchRepos()
-    const repoMap = await fetchLanguages()
-    const data = await repoData()
+  const repos = await fetchRepos();
+  const repoMap = await fetchLanguages();
+  const data = await repoData();
 
-    const items = data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
-        .map(res => {
-            return `
+  const items = data
+    .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+    .map((res) => {
+      return `
         <li>
             <a href=${res.url} target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>${res.name}</b>
-                        <span> - ${res.description ?? ''}</span>
+                        <span> - ${res.description ?? ""}</span>
                     </div>
                     <div>
                         <span>${Object.keys(repoMap.get(res.name)).join(", ")}</span>
@@ -198,18 +201,19 @@ const generateSite = async () => {
                 </div>
             </a>
         </li>
-        `
-        }).join("")
+        `;
+    })
+    .join("");
 
-    return `
+  return `
     <h1>This is my website.</h1><h1>Here are some repositories.</h1>
     <ul>
     ${items}
     </ul>
-    `
-}
-generateSite().then(site => {
-        const siteData = siteTemplate(site)
-        fs.writeFile("index.html", siteData);
-        console.log(site)
-    })
+    `;
+};
+generateSite().then((site) => {
+  const siteData = siteTemplate(site);
+  fs.writeFile("index.html", siteData);
+  console.log(site);
+});
