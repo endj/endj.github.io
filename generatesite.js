@@ -75,11 +75,11 @@ const siteTemplate = (body) => {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://api.github.com">
     <meta charset="UTF-8">
+    <meta name="description" content="Personal Website for Edin Jakupovic.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edin Jakupovic</title>
     <style>
 :root {
   --dark: rgb(29, 29, 29);
