@@ -1,0 +1,675 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Personal Website for Edin Jakupovic.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edin Jakupovic</title>
+    <style>
+        :root {
+         --dark: rgb(29, 29, 29);
+         --dark-hover: #292929;
+         --light: #dbdbdb;
+         --light-hover: #efefef;
+        }
+       
+        * {
+            padding: 0;
+            border: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        body {
+            margin: 5%;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            * {
+                background: var(--dark);
+                color: var(--light);
+            }
+       
+            li:hover {
+                background: var(--dark-hover);
+            }
+
+            li:hover > * {
+                background: inherit;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            * {
+                background: var(--light);
+                color: var(--dark);
+            }
+        
+            li:hover {
+                background: var(--light-hover);
+            }
+           
+             li:hover > * {
+               background: inherit;
+            }
+        }
+        li {padding:5px;}
+        
+
+    </style>
+</head>
+<body>
+    
+    <h1>This is my website.</h1>
+    <h1>Here are some repositories.</h1>
+    <ul>
+    
+        <li>
+            <a href="https://github.com/endj/NonBlocking-TLV-Server-Client-" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>NonBlocking-TLV-Server-Client-</b>
+                        <span> - Reactive TLV Server and Client</span>
+                    </div>
+                    <div>
+                        <span>Java, Python</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/ai-music" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>ai-music</b>
+                        <span> - Software for generating AI song covers with different voices</span>
+                    </div>
+                    <div>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Ministry-of-Truth" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Ministry-of-Truth</b>
+                        <span> - The internet is dead and we killed it. Demonstrating how to create a system for spreading propaganda using LLM's</span>
+                    </div>
+                    <div>
+                        <span>Python, Go</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/AOC-2025" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>AOC-2025</b>
+                        <span> - Advent of Code 2025</span>
+                    </div>
+                    <div>
+                        <span>Java, Go, Rust, Python, JavaScript</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/endj.github.io" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>endj.github.io</b>
+                        <span> - Source code for https://endj.github.io/</span>
+                    </div>
+                    <div>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/test" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>test</b>
+                        <span> - AI "feature jam" hackathon</span>
+                    </div>
+                    <div>
+                        <span>HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/K-means-clustering" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>K-means-clustering</b>
+                        <span> - Demonstration of a method for segmenting data into K groups based on median of some property</span>
+                    </div>
+                    <div>
+                        <span>JavaScript, HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/QuadTree" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>QuadTree</b>
+                        <span> - Data structure for use cases such as detecting collisions efficiently  </span>
+                    </div>
+                    <div>
+                        <span>JavaScript, HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/ObsidianGoogleDriveBackup" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>ObsidianGoogleDriveBackup</b>
+                        <span> - Scrip that backs obsidian folder to Google Drive</span>
+                    </div>
+                    <div>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/web-compression" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>web-compression</b>
+                        <span> - Measuring overhead of compression</span>
+                    </div>
+                    <div>
+                        <span>Go, JavaScript, HTML, Shell</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/comparing-some-serialization-options" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>comparing-some-serialization-options</b>
+                        <span> - Comparing some Java serialization options</span>
+                    </div>
+                    <div>
+                        <span>Java</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Event-Aggregation-Patterns" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Event-Aggregation-Patterns</b>
+                        <span> - Just exploring some event aggregation pattenrs</span>
+                    </div>
+                    <div>
+                        <span>Java, Rust, Python</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/DB-Write-Coalescing" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>DB-Write-Coalescing</b>
+                        <span> - Testing out strategies for write coalescing of SQL inserts</span>
+                    </div>
+                    <div>
+                        <span>Java</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Java-Mini-Framework" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Java-Mini-Framework</b>
+                        <span> - Simple minimal runtime dependencies framework for testing things</span>
+                    </div>
+                    <div>
+                        <span>Java, Kotlin, Shell</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Actor-Model-Framework-Java-16" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Actor-Model-Framework-Java-16</b>
+                        <span> - Just a small project to test some new features in Java 16. </span>
+                    </div>
+                    <div>
+                        <span>Java</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Exploring-IAM-ideas" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Exploring-IAM-ideas</b>
+                        <span> - Just for testing some ideas</span>
+                    </div>
+                    <div>
+                        <span>Java, Kotlin</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Dotfiles-and-setup" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Dotfiles-and-setup</b>
+                        <span> - Setup for environment</span>
+                    </div>
+                    <div>
+                        <span>Shell</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/URL-Shortener" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>URL-Shortener</b>
+                        <span> - URL shortener which is good enough for toy projects</span>
+                    </div>
+                    <div>
+                        <span>Go, Makefile</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Investment-Returns-Simulation" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Investment-Returns-Simulation</b>
+                        <span> - Simulating investment returns over time</span>
+                    </div>
+                    <div>
+                        <span>TypeScript, HTML, JavaScript</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/game-of-life" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>game-of-life</b>
+                        <span> - Comparing GameOfLife performance between 2d canvas and WebGL</span>
+                    </div>
+                    <div>
+                        <span>JavaScript, HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/JS-RNG" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>JS-RNG</b>
+                        <span> - Testing sources of randomness</span>
+                    </div>
+                    <div>
+                        <span>HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Very-Random-Totally-Fair-And-Open-Source-Random-Picker" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Very-Random-Totally-Fair-And-Open-Source-Random-Picker</b>
+                        <span> - Very useful at work</span>
+                    </div>
+                    <div>
+                        <span>TypeScript</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Distributed-Scheduling-Example" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Distributed-Scheduling-Example</b>
+                        <span> - Repo that implements a simple lock strategy to control concurrency</span>
+                    </div>
+                    <div>
+                        <span>Java, JavaScript, HTML, Dockerfile, Shell</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/endj" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>endj</b>
+                        <span> - Converts an image to a markdown table  using matching color icons</span>
+                    </div>
+                    <div>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/vigen-re" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>vigen-re</b>
+                        <span> - Visualization of encrypting text using Vigènere ciphers</span>
+                    </div>
+                    <div>
+                        <span>JavaScript, HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/vertx-websocket-test" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>vertx-websocket-test</b>
+                        <span> - Testing websockets in vertx</span>
+                    </div>
+                    <div>
+                        <span>Java, JavaScript, HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/ABACadabra" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>ABACadabra</b>
+                        <span> - Poor quality prototype for better understanding attribute based IAM systems</span>
+                    </div>
+                    <div>
+                        <span>Java</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/SmartScraper" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>SmartScraper</b>
+                        <span> - KTH thesis work</span>
+                    </div>
+                    <div>
+                        <span>Java, PHP</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/postgres-tuning-bench" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>postgres-tuning-bench</b>
+                        <span> - Sandbox for testing Postgres settings</span>
+                    </div>
+                    <div>
+                        <span>Go, Shell, Makefile, Dockerfile, Python</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/GraphQL-Presentation" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>GraphQL-Presentation</b>
+                        <span> - GraphQL talk slides</span>
+                    </div>
+                    <div>
+                        <span>Java, JavaScript, HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/ECS-Architecture-Animation-System" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>ECS-Architecture-Animation-System</b>
+                        <span> - Trying out ECS architecture.</span>
+                    </div>
+                    <div>
+                        <span>TypeScript, JavaScript</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/JavaScript-Cross-Worker-Data-Sharing" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>JavaScript-Cross-Worker-Data-Sharing</b>
+                        <span> - Testing Strategies For JavaScript Cross Worker Data Sharing</span>
+                    </div>
+                    <div>
+                        <span>JavaScript, HTML, Shell</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/JFokus-2022-Trustly-Competition-Answers" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>JFokus-2022-Trustly-Competition-Answers</b>
+                        <span> - Repo containing all answers to Trustly's Coding challenge at JFokus 2022</span>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/JS-3d-polygon-mesh-renderer" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>JS-3d-polygon-mesh-renderer</b>
+                        <span> - Testing out some 3d rendering techniques</span>
+                    </div>
+                    <div>
+                        <span>TypeScript, JavaScript</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Book-to-audio" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Book-to-audio</b>
+                        <span> - Python application for converting plain text or pdf's to spoken audio.</span>
+                    </div>
+                    <div>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Spring-Boot-Web-Boilerplate-Service-Generator" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Spring-Boot-Web-Boilerplate-Service-Generator</b>
+                        <span> - Script for generating Spring MVC applications based on some JSON model with types</span>
+                    </div>
+                    <div>
+                        <span>Java, Shell</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/AdventOfCode2020" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>AdventOfCode2020</b>
+                        <span> - Solutions for https://adventofcode.com/</span>
+                    </div>
+                    <div>
+                        <span>Rust</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Kafka-Delivery-Guarantees" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Kafka-Delivery-Guarantees</b>
+                        <span> - Short document with examples covering delivery guarantees in distributed systems with examples in Kafka </span>
+                    </div>
+                    <div>
+                        <span>TeX</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Graceful-JVM-shutdown-on-Signals-using-shutdownHook" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Graceful-JVM-shutdown-on-Signals-using-shutdownHook</b>
+                        <span> - Some examples on how to gracefully handle OS signal shutdowns.</span>
+                    </div>
+                    <div>
+                        <span>Java</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/Delphi" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>Delphi</b>
+                        <span> - Project in cooperation with Tele2. Using mobile and web to create a modern queue system. </span>
+                    </div>
+                    <div>
+                        <span>PHP, CSS, JavaScript, HTML, ApacheConf</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+    </ul>
+    
+</body>
+</html>
