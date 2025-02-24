@@ -4,119 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Personal Website for Edin Jakupovic.">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edin Jakupovic</title>
     <style>
-:root {
-  --dark: rgb(29, 29, 29);
-  --dark-hover: #292929;
-  --light: #dbdbdb;
-  --light-hover: #efefef;
-}
+        :root {
+         --dark: rgb(29, 29, 29);
+         --dark-hover: #292929;
+         --light: #dbdbdb;
+         --light-hover: #efefef;
+        }
+       
+        * {
+            padding: 0;
+            border: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        body {
+            margin: 5%;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            * {
+                background: var(--dark);
+                color: var(--light);
+            }
+       
+            li:hover {
+                background: var(--dark-hover);
+            }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-}
+            li:hover > * {
+                background: inherit;
+            }
+        }
 
-.row > div:nth-of-type(2) {
-    text-align: right;
-}
-
-@media (prefers-color-scheme: dark) {
-  * {
-    background: var(--dark);
-    color: var(--light);
-  }
-
-  li:hover {
-    background: var(--dark-hover);
-  }
-
-  li:hover>* {
-    background: inherit;
-  }
-}
-
-/*for light theme*/
-@media (prefers-color-scheme: light) {
-  * {
-    background: var(--light);
-    color: var(--dark);
-  }
-
-  li:hover {
-    background: var(--light-hover);
-  }
-
-  li:hover>* {
-    background: inherit;
-  }
-}
-
-body {
-  margin: 5%;
-}
-
-li {
-  display: block;
-  padding: 5px;
-}
-
-
-h1 {
-  margin: 0;
-}
-
-h1:last-of-type {
-  margin-bottom: 40px;
-}
-
-* {
-  padding: 0;
-  border: none;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  text-decoration: none;
-}
+        @media (prefers-color-scheme: light) {
+            * {
+                background: var(--light);
+                color: var(--dark);
+            }
+        
+            li:hover {
+                background: var(--light-hover);
+            }
+           
+             li:hover > * {
+               background: inherit;
+            }
+        }
+        li {padding:5px;}
+        
 
     </style>
 </head>
 <body>
     
-    <h1>This is my website.</h1><h1>Here are some repositories.</h1>
+    <h1>This is my website.</h1>
+    <h1>Here are some repositories.</h1>
     <ul>
     
         <li>
-            <a href=https://github.com/endj/test target="_blank" rel="noopener">
+            <a href="https://github.com/endj/NonBlocking-TLV-Server-Client-" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
-                        <b>test</b>
-                        <span> - AI "feature jam" hackathon</span>
+                        <b>NonBlocking-TLV-Server-Client-</b>
+                        <span> - Reactive TLV Server and Client</span>
                     </div>
                     <div>
-                        <span>HTML</span>
+                        <span>Java, Python</span>
                     </div>
                 </div>
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/AOC-2025 target="_blank" rel="noopener">
+            <a href="https://github.com/endj/ai-music" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
-                        <b>AOC-2025</b>
-                        <span> - Advent of Code 2025</span>
+                        <b>ai-music</b>
+                        <span> - Software for generating AI song covers with different voices</span>
                     </div>
                     <div>
-                        <span>Java, Go, Rust, Python, JavaScript</span>
+                        <span>Python</span>
                     </div>
                 </div>
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Ministry-of-Truth target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Ministry-of-Truth" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Ministry-of-Truth</b>
@@ -129,22 +114,24 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/K-means-clustering target="_blank" rel="noopener">
+            <a href="https://github.com/endj/AOC-2025" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
-                        <b>K-means-clustering</b>
-                        <span> - Demonstration of a method for segmenting data into K groups based on median of some property</span>
+                        <b>AOC-2025</b>
+                        <span> - Advent of Code 2025</span>
                     </div>
                     <div>
-                        <span>JavaScript, HTML</span>
+                        <span>Java, Go, Rust, Python, JavaScript</span>
                     </div>
                 </div>
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/endj.github.io target="_blank" rel="noopener">
+            <a href="https://github.com/endj/endj.github.io" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>endj.github.io</b>
@@ -157,8 +144,39 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/QuadTree target="_blank" rel="noopener">
+            <a href="https://github.com/endj/test" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>test</b>
+                        <span> - AI "feature jam" hackathon</span>
+                    </div>
+                    <div>
+                        <span>HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/K-means-clustering" target="_blank" rel="noopener">
+                <div class="row">
+                    <div>
+                        <b>K-means-clustering</b>
+                        <span> - Demonstration of a method for segmenting data into K groups based on median of some property</span>
+                    </div>
+                    <div>
+                        <span>JavaScript, HTML</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        
+
+        <li>
+            <a href="https://github.com/endj/QuadTree" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>QuadTree</b>
@@ -171,8 +189,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/ObsidianGoogleDriveBackup target="_blank" rel="noopener">
+            <a href="https://github.com/endj/ObsidianGoogleDriveBackup" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>ObsidianGoogleDriveBackup</b>
@@ -185,8 +204,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/web-compression target="_blank" rel="noopener">
+            <a href="https://github.com/endj/web-compression" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>web-compression</b>
@@ -199,8 +219,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/comparing-some-serialization-options target="_blank" rel="noopener">
+            <a href="https://github.com/endj/comparing-some-serialization-options" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>comparing-some-serialization-options</b>
@@ -213,8 +234,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Event-Aggregation-Patterns target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Event-Aggregation-Patterns" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Event-Aggregation-Patterns</b>
@@ -227,8 +249,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/DB-Write-Coalescing target="_blank" rel="noopener">
+            <a href="https://github.com/endj/DB-Write-Coalescing" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>DB-Write-Coalescing</b>
@@ -241,8 +264,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Java-Mini-Framework target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Java-Mini-Framework" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Java-Mini-Framework</b>
@@ -255,8 +279,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Actor-Model-Framework-Java-16 target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Actor-Model-Framework-Java-16" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Actor-Model-Framework-Java-16</b>
@@ -269,8 +294,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Exploring-IAM-ideas target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Exploring-IAM-ideas" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Exploring-IAM-ideas</b>
@@ -283,8 +309,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Dotfiles-and-setup target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Dotfiles-and-setup" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Dotfiles-and-setup</b>
@@ -297,8 +324,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/URL-Shortener target="_blank" rel="noopener">
+            <a href="https://github.com/endj/URL-Shortener" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>URL-Shortener</b>
@@ -311,8 +339,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Investment-Returns-Simulation target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Investment-Returns-Simulation" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Investment-Returns-Simulation</b>
@@ -325,8 +354,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/game-of-life target="_blank" rel="noopener">
+            <a href="https://github.com/endj/game-of-life" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>game-of-life</b>
@@ -339,8 +369,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/JS-RNG target="_blank" rel="noopener">
+            <a href="https://github.com/endj/JS-RNG" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>JS-RNG</b>
@@ -353,8 +384,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Very-Random-Totally-Fair-And-Open-Source-Random-Picker target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Very-Random-Totally-Fair-And-Open-Source-Random-Picker" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Very-Random-Totally-Fair-And-Open-Source-Random-Picker</b>
@@ -367,8 +399,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Distributed-Scheduling-Example target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Distributed-Scheduling-Example" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Distributed-Scheduling-Example</b>
@@ -381,8 +414,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/endj target="_blank" rel="noopener">
+            <a href="https://github.com/endj/endj" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>endj</b>
@@ -395,8 +429,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/vigen-re target="_blank" rel="noopener">
+            <a href="https://github.com/endj/vigen-re" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>vigen-re</b>
@@ -409,8 +444,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/vertx-websocket-test target="_blank" rel="noopener">
+            <a href="https://github.com/endj/vertx-websocket-test" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>vertx-websocket-test</b>
@@ -423,8 +459,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/ABACadabra target="_blank" rel="noopener">
+            <a href="https://github.com/endj/ABACadabra" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>ABACadabra</b>
@@ -437,8 +474,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/SmartScraper target="_blank" rel="noopener">
+            <a href="https://github.com/endj/SmartScraper" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>SmartScraper</b>
@@ -451,8 +489,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/postgres-tuning-bench target="_blank" rel="noopener">
+            <a href="https://github.com/endj/postgres-tuning-bench" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>postgres-tuning-bench</b>
@@ -465,8 +504,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/GraphQL-Presentation target="_blank" rel="noopener">
+            <a href="https://github.com/endj/GraphQL-Presentation" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>GraphQL-Presentation</b>
@@ -479,8 +519,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/ECS-Architecture-Animation-System target="_blank" rel="noopener">
+            <a href="https://github.com/endj/ECS-Architecture-Animation-System" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>ECS-Architecture-Animation-System</b>
@@ -493,8 +534,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/JavaScript-Cross-Worker-Data-Sharing target="_blank" rel="noopener">
+            <a href="https://github.com/endj/JavaScript-Cross-Worker-Data-Sharing" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>JavaScript-Cross-Worker-Data-Sharing</b>
@@ -507,8 +549,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/JFokus-2022-Trustly-Competition-Answers target="_blank" rel="noopener">
+            <a href="https://github.com/endj/JFokus-2022-Trustly-Competition-Answers" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>JFokus-2022-Trustly-Competition-Answers</b>
@@ -521,8 +564,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/JS-3d-polygon-mesh-renderer target="_blank" rel="noopener">
+            <a href="https://github.com/endj/JS-3d-polygon-mesh-renderer" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>JS-3d-polygon-mesh-renderer</b>
@@ -535,8 +579,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Book-to-audio target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Book-to-audio" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Book-to-audio</b>
@@ -549,8 +594,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Spring-Boot-Web-Boilerplate-Service-Generator target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Spring-Boot-Web-Boilerplate-Service-Generator" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Spring-Boot-Web-Boilerplate-Service-Generator</b>
@@ -563,8 +609,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/AdventOfCode2020 target="_blank" rel="noopener">
+            <a href="https://github.com/endj/AdventOfCode2020" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>AdventOfCode2020</b>
@@ -577,8 +624,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Kafka-Delivery-Guarantees target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Kafka-Delivery-Guarantees" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Kafka-Delivery-Guarantees</b>
@@ -591,8 +639,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Graceful-JVM-shutdown-on-Signals-using-shutdownHook target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Graceful-JVM-shutdown-on-Signals-using-shutdownHook" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Graceful-JVM-shutdown-on-Signals-using-shutdownHook</b>
@@ -605,8 +654,9 @@ h1:last-of-type {
             </a>
         </li>
         
+
         <li>
-            <a href=https://github.com/endj/Delphi target="_blank" rel="noopener">
+            <a href="https://github.com/endj/Delphi" target="_blank" rel="noopener">
                 <div class="row">
                     <div>
                         <b>Delphi</b>
