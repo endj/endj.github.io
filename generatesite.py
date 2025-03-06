@@ -178,7 +178,7 @@ def generate_site():
 
     return f"""
     <h1>This is my website.</h1>
-    <h1>Here are some repositories.</h1>
+    <h1>Here are some projects.</h1>
     <ul>
     {items}
     </ul>
